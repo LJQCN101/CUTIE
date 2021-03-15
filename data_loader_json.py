@@ -14,7 +14,7 @@ import tensorflow as tf
 import tokenization
 import cv2
 
-DEBUG = False # True to show grid as image 
+DEBUG = False # True to show grid as image
 
 import unicodedata
 def is_number(s):
@@ -892,7 +892,7 @@ class DataLoader():
         string = text if self.text_case else text.lower()
         for i, c in enumerate(string):
             if is_number(c):
-                string = string[:i] + '0' + string[i+1:]
+                string = string.replace(c, c+' ')
                 
         strings = [string]
         if self.tokenize:
@@ -917,7 +917,7 @@ class DataLoader():
                 if update_dict:
                     self.dictionary[string] = 0
                 else:
-                    #print('unknown text: ' + string)
+                    print('unknown text: ' + string)
                     string = '[UNK]' # TBD: take special care to unmet words\
             self.dictionary[string] += 1
             
@@ -949,8 +949,7 @@ class DataLoader():
         grid_box_h, grid_box_w = 20, 40
         palette = np.zeros([height*grid_box_h, width*grid_box_w, 3], np.uint8)
         font = cv2.FONT_HERSHEY_SIMPLEX
-        gt_color = [[255, 250, 240], [152, 245, 255], [127, 255, 212], [100, 149, 237], 
-                    [192, 255, 62], [175, 238, 238], [255, 130, 171], [240, 128, 128], [255, 105, 180]]
+        gt_color = [[random.randint(10, 255), random.randint(10, 255), random.randint(10, 255)] for i in range(20)]
         cv2.putText(palette, file_name+"({},{})".format(height,width), (grid_box_h,grid_box_w), font, 0.6, [255,0,0])  
         for h in range(height):
             cv2.line(palette, (0,h*grid_box_h), (width*grid_box_w, h*grid_box_h), (100,100,100))

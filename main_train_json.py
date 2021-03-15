@@ -6,7 +6,7 @@ import numpy as np
 import argparse, os
 import timeit
 from pprint import pprint
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 from data_loader_json import DataLoader
 from utils import *
@@ -14,22 +14,24 @@ from utils import *
 from model_cutie_aspp import CUTIERes as CUTIEv1
 from model_cutie2_aspp import CUTIE2 as CUTIEv2
 
+from tensorflow.python.client import device_lib
+
 parser = argparse.ArgumentParser(description='CUTIE parameters')
 # data
-parser.add_argument('--use_cutie2', type=bool, default=False) # True to read image from doc_path 
-parser.add_argument('--doc_path', type=str, default='data/SROIE')
+parser.add_argument('--use_cutie2', type=bool, default=False) # True to read image from doc_path
+parser.add_argument('--doc_path', type=str, default='./invoice_data')
 parser.add_argument('--save_prefix', type=str, default='SROIE', help='prefix for ckpt') # TBD: save log/models with prefix
 parser.add_argument('--test_path', type=str, default='') # leave empty if no test data provided
 
 # ckpt
 parser.add_argument('--restore_ckpt', type=bool, default=False) 
 parser.add_argument('--restore_bertembedding_only', type=bool, default=False) # effective when restore_ckpt is True
-parser.add_argument('--embedding_file', type=str, default='../graph/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt') 
-parser.add_argument('--ckpt_path', type=str, default='../graph/CUTIE/graph/')
-parser.add_argument('--ckpt_file', type=str, default='meals/CUTIE_highresolution_8x_d20000c9(r80c80)_iter_40000.ckpt')  
+parser.add_argument('--embedding_file', type=str, default='./graph/bert/multi_cased_L-12_H-768_A-12/bert_model.ckpt')
+parser.add_argument('--ckpt_path', type=str, default='./graph/')
+parser.add_argument('--ckpt_file', type=str, default='./graph/CUTIE_highresolution_8x_d20000c9(r80c80)_iter_40000.ckpt')
 
 # dict
-parser.add_argument('--load_dict', type=bool, default=True, help='True to work based on an existing dict') 
+parser.add_argument('--load_dict', type=bool, default=True, help='True to work based on an existing dict')
 parser.add_argument('--load_dict_from_path', type=str, default='dict/SROIE') # 40000 or 20000TC or table
 parser.add_argument('--tokenize', type=bool, default=True) # tokenize input text
 parser.add_argument('--text_case', type=bool, default=True) # case sensitive
@@ -54,8 +56,8 @@ parser.add_argument('--data_augmentation_extra_rows', type=int, default=16)
 parser.add_argument('--data_augmentation_extra_cols', type=int, default=16) 
 
 # training
-parser.add_argument('--batch_size', type=int, default=32) 
-parser.add_argument('--iterations', type=int, default=40000)  
+parser.add_argument('--batch_size', type=int, default=1)
+parser.add_argument('--iterations', type=int, default=1000)
 parser.add_argument('--lr_decay_step', type=int, default=13000) 
 parser.add_argument('--learning_rate', type=float, default=0.0001)
 parser.add_argument('--lr_decay_factor', type=float, default=0.1) 
@@ -67,7 +69,7 @@ parser.add_argument('--ghm_bins', type=int, default=30) # to be tuned
 parser.add_argument('--ghm_momentum', type=int, default=0) # 0 / 0.75
 
 # log
-parser.add_argument('--log_path', type=str, default='../graph/CUTIE/log/') 
+parser.add_argument('--log_path', type=str, default='./graph/log/')
 parser.add_argument('--log_disp_step', type=int, default=200) 
 parser.add_argument('--log_save_step', type=int, default=200) 
 parser.add_argument('--validation_step', type=int, default=200) 

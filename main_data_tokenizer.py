@@ -9,8 +9,8 @@ from data_loader_json import DataLoader
 
 parser = argparse.ArgumentParser(description='Data Tokenizer parameters')
 parser.add_argument('--dict_path', type=str, default='dict/vocab.txt') 
-parser.add_argument('--doc_path', type=str, default='data/meals') 
-parser.add_argument('--batch_size', type=int, default=32) 
+parser.add_argument('--doc_path', type=str, default='./invoice_data')
+parser.add_argument('--batch_size', type=int, default=16)
 params = parser.parse_args()
 
 #class DataTokenizer(DataLoader):

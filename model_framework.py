@@ -393,7 +393,7 @@ class Model(object):
           name = tensor.name
         
         if expected_rank is not None:
-          assert_rank(tensor, expected_rank, name)
+          tf.assert_rank(tensor, expected_rank, name)
         
         shape = tensor.shape.as_list()
         
