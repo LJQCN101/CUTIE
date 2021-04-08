@@ -16,14 +16,12 @@ from utils import *
 parser = argparse.ArgumentParser(description='CUTIE parameters')
 parser.add_argument('--use_cutie2', type=bool, default=False) # True to read image from doc_path
 parser.add_argument('--is_table', type=bool, default=False) # True to read image from doc_path 
-parser.add_argument('--doc_path', type=str, default='./invoice_data') # modify this
+parser.add_argument('--doc_path', type=str, default='D:/dataset/invoice_eval') # modify this
 parser.add_argument('--save_prefix', type=str, default='SROIE', help='prefix for load ckpt model') # modify this
 parser.add_argument('--test_path', type=str, default='') # leave empty if no test data provided
 
 parser.add_argument('--fill_bbox', type=bool, default=False) # augment data row/col in each batch
 
-parser.add_argument('--e_ckpt_path', type=str, default='./graph/SROIE/') # modify this
-parser.add_argument('--ckpt_file', type=str, default='CUTIE_atrousSPP_d20000c7(r80c110)_iter_1000.ckpt')
 parser.add_argument('--positional_mapping_strategy', type=int, default=1)
 parser.add_argument('--rows_target', type=int, default=80)  
 parser.add_argument('--cols_target', type=int, default=80) 
@@ -46,7 +44,7 @@ params = parser.parse_args()
 if __name__ == '__main__':
     # data
     #data_loader = DataLoader(params, True, True) # True to use 25% training data
-    data_loader = DataLoader(params, update_dict=False, load_dictionary=True, data_split=0.75) # False to provide a path with only test data
+    data_loader = DataLoader(params, update_dict=False, load_dictionary=True, data_split=0.0) # False to provide a path with only test data
     num_words = max(20000, data_loader.num_words)
     num_classes = data_loader.num_classes
 
@@ -64,7 +62,7 @@ if __name__ == '__main__':
         sess.run(tf.global_variables_initializer())
         try:
             #ckpt_path = os.path.join(params.e_ckpt_path, params.save_prefix, params.ckpt_file)
-            ckpt_path = './graph/SROIE/CUTIE_atrousSPP_d20000c7(r110c110)_iter_3000.ckpt'
+            ckpt_path = './graph/SROIE/CUTIE_atrousSPP_d20000c9(r110c110)_iter_16001.ckpt'
             ckpt = tf.train.get_checkpoint_state(ckpt_path)
             print('Restoring from {}...'.format(ckpt_path))
             ckpt_saver.restore(sess, ckpt_path)
@@ -115,8 +113,8 @@ if __name__ == '__main__':
             recalls += [recall]
             accs_strict += [acc_strict] 
             accs_soft += [acc_soft]
-            if acc_strict != 1:
-                print(res.decode()) # show res for current batch
+            #if acc_strict != 1:
+            print(res.decode()) # show res for current batch
             
             # visualize result
             shape = data['shape']

@@ -44,7 +44,7 @@ class DataLoader():
         #self.classes = ['DontCare', 'Column0', 'Column1', 'Column2', 'Column3', 'Column4', 'Column5'] # for column
         #self.classes = ['DontCare', 'Column']
         #self.classes = ['DontCare', 'VendorName', 'VendorTaxID', 'InvoiceDate', 'InvoiceNumber', 'ExpenseAmount', 'BaseAmount', 'TaxAmount', 'TaxRate'] # for Spanish project
-        self.classes = ['O', 'customer_number', 'name', 'address', 'amount', 'date', 'content']
+        self.classes = ['O', 'company', 'customer_number', 'name', 'address1', 'address2', 'amount', 'due_date', 'content']
         self.doc_path = params.doc_path
         self.doc_test_path = params.test_path
         self.use_cutie2 = params.use_cutie2 
@@ -118,7 +118,7 @@ class DataLoader():
             selected_training_index = random.sample(data_to_be_fetched, num_training)
         selected_validation_index = list(set(data_to_be_fetched).difference(set(selected_training_index)))
         self.validation_docs = [self.training_docs[x] for x in selected_validation_index]
-        self.training_docs = [self.training_docs[x] for x in selected_training_index]
+        #self.training_docs = [self.training_docs[x] for x in selected_training_index]
         self.validation_labels = self.training_labels
         print('\n\nDATASET: %d vocabularies, %d target classes'%(len(self.dictionary), len(self.classes)))
         print('DATASET: %d for training, %d for validation'%(len(self.training_docs), len(self.validation_docs)))
