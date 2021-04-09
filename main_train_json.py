@@ -1,7 +1,9 @@
 # written by Xiaohui Zhao
 # 2018-12 
 # xh.zhao@outlook.com
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+import tensorflow_addons as tfa
+tf.disable_v2_behavior()
 import numpy as np
 import argparse, os
 import timeit
@@ -159,7 +161,7 @@ if __name__ == '__main__':
     with tf.control_dependencies([train_op]):
         train_dummy = tf.constant(0)
   
-    tf.contrib.training.add_gradients_summaries(zip(clipped_grads, tvars))
+    tfa.training.add_gradients_summaries(zip(clipped_grads, tvars))
     summary_op = tf.summary.merge_all()    
     
     # calculate the number of parameters

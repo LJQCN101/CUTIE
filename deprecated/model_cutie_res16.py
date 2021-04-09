@@ -1,7 +1,7 @@
 # written by Xiaohui Zhao
 # 2018-12 
 # xiaohui.zhao@accenture.com
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from model_cutie import CUTIE    
     
 class CUTIERes(CUTIE):

@@ -10,7 +10,7 @@ from collections import defaultdict
 import numpy as np
 np_load_old = np.load
 np.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import tokenization
 import cv2
 

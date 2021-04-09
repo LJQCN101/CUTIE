@@ -1,7 +1,7 @@
 # written by Xiaohui Zhao
 # 2018-12 
 # xh.zhao@outlook.com
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from model_framework import Model
     
     

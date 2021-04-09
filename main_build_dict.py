@@ -1,7 +1,7 @@
 # written by Xiaohui Zhao
 # 2018-01
 # xiaohui.zhao@outlook.com
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import argparse
 
 from data_loader_json import DataLoader

@@ -1,7 +1,8 @@
 # written by Xiaohui Zhao
 # 2018-12 
 # xiaohui.zhao@outlook.com
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+import tensorflow_addons as tfa
 import math
 
 def layer(op):
@@ -288,7 +289,7 @@ class Model(object):
             #attention_output = dropout(attention_output, hidden_dropout)
             attention_output = attention_output + x
             
-            return tf.contrib.layers.instance_norm(attention_output, center=False, scale=False)
+            return tfa.layers.instance_norm(attention_output, center=False, scale=False)
     
     
     @layer
@@ -420,7 +421,7 @@ class Model(object):
         # test with different orders: convolve/activate/normalize; normalize/convolve/activate; convolve/normalize/activate
         wx = convolve(input, kernel)
         a = activate(tf.nn.bias_add(wx, biases))
-        a = tf.contrib.layers.instance_norm(a, center=False, scale=False)
+        a = tfa.layers.InstanceNormalization(center=False, scale=False)(a)
         return a
     
     

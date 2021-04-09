@@ -33,7 +33,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ff344e8-1a96-4314-a0b4-c445043dd685" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CUTIE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CUTIE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bert_embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/bert_embedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_loader_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_loader_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_att.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_att.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_dilate.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_dilate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_fpn8.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_fpn8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_res.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_res.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_res16.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_res16.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_res_att.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_res_att.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_res_att_bert.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_res_att_bert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_sep.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_sep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deprecated/model_cutie_unet8.py" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model_cutie_unet8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dict/SROIE_dictionary.npy" beforeDir="false" afterPath="$PROJECT_DIR$/dict/SROIE_dictionary.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_build_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_build_dict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_data_tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_data_tokenizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_evaluate_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_evaluate_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_train_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_train_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie2_aspp.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie2_aspp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie2_dilate.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie2_dilate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie2_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie2_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie_aspp.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie_aspp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie_hr.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie_hr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_cutie_res_bert.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_cutie_res_bert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_framework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tokenization.py" beforeDir="false" afterPath="$PROJECT_DIR$/tokenization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,10 +197,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_evaluate_json" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.main_train_json" />
         <item itemvalue="Python.main_data_tokenizer" />
         <item itemvalue="Python.main_build_dict" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -215,22 +243,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615974065937" />
-    <state width="1893" height="267" key="GridCell.Tab.0.bottom" timestamp="1617867538901">
+    <state width="1893" height="267" key="GridCell.Tab.0.bottom" timestamp="1617963163579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617867538901" />
-    <state width="1893" height="267" key="GridCell.Tab.0.center" timestamp="1617867538901">
+    <state width="1893" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617963163578" />
+    <state width="1893" height="267" key="GridCell.Tab.0.center" timestamp="1617963163578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="267" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617867538901" />
-    <state width="1893" height="267" key="GridCell.Tab.0.left" timestamp="1617867538901">
+    <state width="1893" height="267" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617963163578" />
+    <state width="1893" height="267" key="GridCell.Tab.0.left" timestamp="1617963163578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="267" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617867538901" />
-    <state width="1893" height="267" key="GridCell.Tab.0.right" timestamp="1617867538901">
+    <state width="1893" height="267" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617963163578" />
+    <state width="1893" height="267" key="GridCell.Tab.0.right" timestamp="1617963163578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1893" height="267" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617867538901" />
+    <state width="1893" height="267" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617963163578" />
     <state width="1893" height="331" key="GridCell.Tab.1.bottom" timestamp="1617867538900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -247,18 +275,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1893" height="331" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617867538900" />
-    <state x="351" y="78" key="SettingsEditor" timestamp="1617867508138">
+    <state x="351" y="78" key="SettingsEditor" timestamp="1617962864702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1617867508138" />
+    <state x="351" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1617962864702" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1615791732365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1615791732365" />
-    <state x="605" y="188" width="710" height="736" key="find.popup" timestamp="1617860440272">
+    <state x="743" y="193" width="710" height="736" key="find.popup" timestamp="1617963127900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="605" y="188" width="710" height="736" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617860440272" />
+    <state x="743" y="193" width="710" height="736" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617963127900" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

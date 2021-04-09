@@ -1,7 +1,7 @@
 # written by Xiaohui Zhao
 # 2019-04
 # xiaohui.zhao@outlook.com
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from model_cutie2 import CUTIE2 as CUTIE
     
 class CUTIE2(CUTIE):
