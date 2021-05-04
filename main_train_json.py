@@ -2,7 +2,6 @@
 # 2018-12 
 # xh.zhao@outlook.com
 import tensorflow.compat.v1 as tf
-import tensorflow_addons as tfa
 tf.disable_v2_behavior()
 import numpy as np
 import argparse, os
@@ -22,7 +21,7 @@ parser = argparse.ArgumentParser(description='CUTIE parameters')
 # data
 parser.add_argument('--use_cutie2', type=bool, default=False) # True to read image from doc_path
 parser.add_argument('--doc_path', type=str, default='./invoice_data')
-parser.add_argument('--save_prefix', type=str, default='SROIE', help='prefix for ckpt') # TBD: save log/models with prefix
+parser.add_argument('--save_prefix', type=str, default='CUTIE', help='prefix for ckpt') # TBD: save log/models with prefix
 parser.add_argument('--test_path', type=str, default='') # leave empty if no test data provided
 
 # ckpt
@@ -34,7 +33,7 @@ parser.add_argument('--ckpt_file', type=str, default='./graph/CUTIE_highresoluti
 
 # dict
 parser.add_argument('--load_dict', type=bool, default=True, help='True to work based on an existing dict')
-parser.add_argument('--load_dict_from_path', type=str, default='dict/SROIE') # 40000 or 20000TC or table
+parser.add_argument('--load_dict_from_path', type=str, default='dict/CUTIE') # 40000 or 20000TC or table
 parser.add_argument('--tokenize', type=bool, default=True) # tokenize input text
 parser.add_argument('--text_case', type=bool, default=True) # case sensitive
 parser.add_argument('--update_dict', type=bool, default=False)
@@ -161,7 +160,7 @@ if __name__ == '__main__':
     with tf.control_dependencies([train_op]):
         train_dummy = tf.constant(0)
   
-    tfa.training.add_gradients_summaries(zip(clipped_grads, tvars))
+    #tfa.training.add_gradients_summaries(zip(clipped_grads, tvars))
     summary_op = tf.summary.merge_all()    
     
     # calculate the number of parameters
