@@ -440,7 +440,7 @@ class Model(object):
         # test with different orders: convolve/activate/normalize; normalize/convolve/activate; convolve/normalize/activate
         wx = convolve(input, kernel)
         a = activate(tf.nn.bias_add(wx, biases))
-        a = batch_instance_norm(a, scope='bin_conv' + name)
+        a = batch_instance_norm(a, scope='bin_conv')
         return a
     
     
